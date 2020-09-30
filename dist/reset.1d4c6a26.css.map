@@ -1,1 +1,0 @@
-{"version":3,"sources":["src/reset.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"reset.1d4c6a26.css","sourceRoot":"..","sourcesContent":["*{\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n}\r\n*::before,*::after{\r\n\tmargin: 0;padding: 0;\r\n}\r\n\r\nbody,html,#app{\r\n\theight: 100%;\r\n}\r\n"]}
