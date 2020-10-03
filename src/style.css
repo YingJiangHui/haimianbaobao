@@ -1,18 +1,306 @@
-#app{
-	overflow: hidden;
+#app {
 	background: #fef553;
 }
 
-.hole{
+.hole {
 	position: absolute;
-	background: #abbf27 ;
+	background: #abbf27;
 	animation: scale .25s;
 }
 
-#head{
+#face {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 550px;
+	height: 550px;
+	z-index: 2;
+}
+
+
+.round {
+	border-radius: 50%;
+}
+
+.eye {
+	z-index: 2;
+	background: white;
+	width: 16.8em;
+	height: 16.8em;
+	border: 8px solid #000;
+	top: 0;
+	position: absolute;
+}
+
+.eye > .eyeInner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.leftEye {
+	left: 5%;
+}
+
+.rightEye {
+	right: 5%;
+}
+
+.ball {
+	position: absolute;
+	border: 8px;
+	background: #48cafe;
+	box-shadow: 0 0 0 6px #000;
+	width: 4em;
+	height: 4em;
+}
+
+.ball::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 3em;
+	height: 3em;
+	background: #000;
+	border-radius: 50%;
+}
+
+.eyelash {
+	transform-origin: bottom;
+	position: absolute;
+	height: 2.5em;
+	width: 0.7em;
+	background: black;
+	bottom: 100%;
+	border-top-left-radius: 0.4em;
+	border-top-right-radius: 0.4em;
+}
+
+.eyelash:nth-child(1) {
+	right: 25%;
+	transform: rotate(25deg) translateY(5px);
+}
+
+.eyelash:nth-child(2) {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.eyelash:nth-child(3) {
+	left: 25%;
+	transform: rotate(-25deg) translateY(5px);
+}
+
+
+/*nose*/
+.nose {
+	z-index: 2;
+	width: 5em;
+	height: 8em;
+	border: 8px solid #000;
+	border-bottom: none;
+	border-radius: 40%;
+	transform-origin: bottom;
+	background: #fef553;
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	transform: translateX(-50%);
+}
+
+.nose:hover {
+	animation: swing .1s infinite linear;
+	
+}
+
+.dimple {
+	z-index: 2;
+	background: #fef553;
+	border: 8px solid #e72d16;
+	border-radius: 50%;
+	width: 6em;
+	height: 5em;
+	border-bottom: none;
+	position: absolute;
+	top: 40%;
+}
+.dimple::after {
+	width: 0.5em;
+	height: 2em;
+	background: #000;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	content: '';
+}
+
+.leftDimple::after {
+	transform: translate(-50%) rotate(90deg);
+}
+
+.rightDimple::after {
+	transform: translateX(-50%) rotate(-90deg);
+}
+
+.leftDimple {
+	left: 0;
+	transform: rotate(-20deg);
+}
+
+.rightDimple {
+	right: 0;
+	transform: rotate(20deg);
+}
+
+.dimple > .spot {
+	width: .8em;
+	height: .8em;
+	background: #e72d16;
+	position: absolute;
+}
+
+.dimple > .spot:nth-child(1) {
+	left: 50%;
+	top: 20%;
+	transform: translateX(-50%);
+}
+
+.dimple > .spot:nth-child(2) {
+	left: 10%;
+	top: 40%;
+}
+
+.dimple > .spot:nth-child(3) {
+	right: 10%;
+	top: 40%;
+}
+.mouth {
+	z-index: 3;
+	width: 90%;
+	height: 50%;
+	position: absolute;
+	top: 52%;
+	left: 50%;
+	transform: translateX(-50%);
+	overflow: hidden;
+}
+
+.lip {
+	position: absolute;
+	border: 6px solid #000;
+	transform: translateX(-50%);
+}
+
+.lip.up {
+	z-index: 2;
+	background: #fef553;
+	bottom: 78%;
+	left: 50%;
+	width: 43em;
+	height: 31.25em;
+	border-radius: 50%;
+}
+
+.lip.up > .tooth {
+	position: absolute;
+	top: 100%;
+	background: #fff;
+	width: 3em;
+	height: 4em;
+	border: 5px solid #000;
+}
+
+.lip.up > .rightTooth {
+	transform: translate(-8px) rotate(3deg);
+	right: 50%;
+}
+
+.lip.up > .leftTooth {
+	transform: translate(8px) rotate(-3deg);
+	left: 50%;
+}
+
+.lip.down {
+	overflow: hidden;
+	bottom: 3%;
+	width: 31.6em;
+	height: 65em;
+	border-radius: 48%;
+	left: 50%;
+	background: #9b000a;
+}
+
+.lip.down::after, .lip.down::before {
+	border: 6px solid #000;
+	border-left: none;
+	position: absolute;
+	bottom: 0;
+	content: '';
+	background: #ff485f;
+	border-radius: 50%;
+	width: 8em;
+	height: 8em;
+	transform: translateY(50%);
+}
+
+.lip.down::after {
+	left: 48%;
+}
+
+.lip.down::before {
+	right: 48%;
+}
+.cover{
+	
+	z-index: 4;
+	width: 77%;
+	height: 3px;
+	position: absolute;
+	top: 51.8%;
+	background: #fef553;
+	left: 50%;
+	border-radius: 50%;
+	transform: translateX(-50%);
+}
+@media (max-width: 500px) {
+	html{
+		font-size: 0.6em;
+	}
+	#face{
+		height: 320px;
+		width: 320px;
+	}
+	.eye {
+		width: 160px;
+		height: 160px;
+		animation: blinkMobile 5s linear infinite;
+	}
+	.leftEye{
+		left: 0;
+	}
+	.rightEye{
+		right: 0;
+	}
+}
+
+#face:hover .lip.up{
+	animation: closeUpLip .25s linear;
+}
+#face:hover .lip.down{
+	animation: closeDownLip .25s linear;
+}
+
+#face:hover .eye{
+	animation: blink .25s linear;
+}
+
+.center{
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
-	border: 1px solid red;
 }

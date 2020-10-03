@@ -1,10 +1,48 @@
 @keyframes scale {
-	0%{
+	0% {
 		opacity: 0;
 		transform: scale(0);
 	}
-	100%{
+	100% {
 		opacity: 1;
-		transform: scale(1) ;
+		transform: scale(1);
 	}
+	
+}
+@keyframes blink {
+	50%{
+		top: 7.4em;
+		height: 0;
+	}
+	100%{
+		top: 0;
+		height: 14.8em;
+	}
+}
+@keyframes swing {
+	0%{
+		transform:translateX(-50%) rotate(5deg);
+	}
+	50%{
+		transform:translateX(-50%) rotate(-5deg);
+		
+	}
+	100%{
+		transform:translateX(-50%) rotate(5deg);
+	}
+}
+
+@keyframes closeUpLip {
+	50%{
+		bottom: 59%;
+		width: 33em;
+	}
+	100%{
+		bottom: 78%;
+		width: 43em;
+	}
+}
+@keyframes closeDownLip {
+	50%{bottom: 58%}
+	100%{bottom: 3%}
 }
